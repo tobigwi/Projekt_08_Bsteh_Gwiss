@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt_08_Bsteh_Gwiß"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="750" Width="1000">
+    <Grid Background="#FF065215">
+        <Button x:Name="Rot3" Content="3" HorizontalAlignment="Left" Height="50" Margin="88,25,0,0" VerticalAlignment="Top" Width="50" Background="#FFFF0303" FontSize="20" Foreground="White"/>
+        <Button x:Name="Schwarz6" Content="6" HorizontalAlignment="Left" Height="50" Margin="138,25,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot9" Content="9" HorizontalAlignment="Left" Height="50" Margin="188,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" FontSize="20" Foreground="White"/>
+        <Button x:Name="Rot12" Content="12" HorizontalAlignment="Left" Height="50" Margin="238,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" FontSize="20" Foreground="White"/>
+        <Button x:Name="Schwarz15" Content="15" HorizontalAlignment="Left" Height="50" Margin="288,25,0,0" VerticalAlignment="Top" Width="50" Background="Black" FontSize="20" Foreground="White"/>
+        <Button x:Name="Rot18" Content="18" HorizontalAlignment="Left" Height="50" Margin="338,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot21" Content="21" HorizontalAlignment="Left" Height="50" Margin="388,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz24" Content="24" HorizontalAlignment="Left" Height="50" Margin="438,25,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot27" Content="27" HorizontalAlignment="Left" Height="50" Margin="488,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot30" Content="30" HorizontalAlignment="Left" Height="50" Margin="538,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz33" Content="33" HorizontalAlignment="Left" Height="50" Margin="588,25,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot36" Content="36" HorizontalAlignment="Left" Height="50" Margin="638,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Linie1" Content="2 to 1" HorizontalAlignment="Left" Height="50" Margin="688,25,0,0" VerticalAlignment="Top" Width="50" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="18"/>
+        <Button x:Name="Schwarz2" Content="2" HorizontalAlignment="Left" Height="50" Margin="88,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot5" Content="5" HorizontalAlignment="Left" Height="50" Margin="138,75,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz8" Content="8" HorizontalAlignment="Left" Height="50" Margin="188,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz11" Content="11" HorizontalAlignment="Left" Height="50" Margin="238,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot11" Content="14" HorizontalAlignment="Left" Height="50" Margin="288,75,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz17" Content="17" HorizontalAlignment="Left" Height="50" Margin="338,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz20" Content="20" HorizontalAlignment="Left" Height="50" Margin="388,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot23" Content="23" HorizontalAlignment="Left" Height="50" Margin="438,75,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz26" Content="26" HorizontalAlignment="Left" Height="50" Margin="488,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz29" Content="29" HorizontalAlignment="Left" Height="50" Margin="538,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot32" Content="32" HorizontalAlignment="Left" Height="50" Margin="588,75,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz35" Content="35" HorizontalAlignment="Left" Height="50" Margin="638,75,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Linie2" Content="2 to 1" HorizontalAlignment="Left" Height="50" Margin="688,75,0,0" VerticalAlignment="Top" Width="50" Foreground="White" FontSize="18" Background="#FF065215" BorderBrush="White"/>
+        <Button x:Name="Rot1" Content="1" HorizontalAlignment="Left" Height="50" Margin="88,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz4" Content="4" HorizontalAlignment="Left" Height="50" Margin="138,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot7" Content="7" HorizontalAlignment="Left" Height="50" Margin="188,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz10" Content="10" HorizontalAlignment="Left" Height="50" Margin="238,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz13" Content="13" HorizontalAlignment="Left" Height="50" Margin="288,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot16" Content="16" HorizontalAlignment="Left" Height="50" Margin="338,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot2" Content="19" HorizontalAlignment="Left" Height="50" Margin="388,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz22" Content="22" HorizontalAlignment="Left" Height="50" Margin="438,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot25" Content="25" HorizontalAlignment="Left" Height="50" Margin="488,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz28" Content="28" HorizontalAlignment="Left" Height="50" Margin="538,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Schwarz31" Content="31" HorizontalAlignment="Left" Height="50" Margin="588,125,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
+        <Button x:Name="Rot34" Content="34" HorizontalAlignment="Left" Height="50" Margin="638,125,0,0" VerticalAlignment="Top" Width="50" Background="Red" Foreground="White" FontSize="20"/>
+        <Button x:Name="Linie3" Content="2 to 1" HorizontalAlignment="Left" Height="50" Margin="688,125,0,0" VerticalAlignment="Top" Width="50" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="18"/>
+        <Button x:Name="Weiss0" Content="0" HorizontalAlignment="Left" Height="150" Margin="38,25,0,0" VerticalAlignment="Top" Width="50" Background="#FF065215" Foreground="White" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="Weiss1" Content="1 - 12" HorizontalAlignment="Left" Height="50" Margin="88,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="Weiss13" Content="13 - 24" HorizontalAlignment="Left" Height="50" Margin="288,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="Weiss25" Content="25 - 36" HorizontalAlignment="Left" Height="50" Margin="488,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
 
     </Grid>
 </Window>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Projekt_08_Bsteh_Gwiß"
         mc:Ignorable="d"
         Title="MainWindow" Height="750" Width="1000">
-    <Grid Background="#FF065215">
+    <Grid Background="#FF065215" Name="grid1">
+        
         <Button x:Name="Rot3" Content="3" HorizontalAlignment="Left" Height="50" Margin="88,25,0,0" VerticalAlignment="Top" Width="50" Background="#FFFF0303" FontSize="20" Foreground="White"/>
         <Button x:Name="Schwarz6" Content="6" HorizontalAlignment="Left" Height="50" Margin="138,25,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontSize="20"/>
         <Button x:Name="Rot9" Content="9" HorizontalAlignment="Left" Height="50" Margin="188,25,0,0" VerticalAlignment="Top" Width="50" Background="Red" FontSize="20" Foreground="White"/>
@@ -50,6 +51,41 @@
         <Button x:Name="Weiss1" Content="1 - 12" HorizontalAlignment="Left" Height="50" Margin="88,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
         <Button x:Name="Weiss13" Content="13 - 24" HorizontalAlignment="Left" Height="50" Margin="288,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
         <Button x:Name="Weiss25" Content="25 - 36" HorizontalAlignment="Left" Height="50" Margin="488,175,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="odd" Content="ODD" HorizontalAlignment="Left" Height="50" Margin="538,225,0,0" VerticalAlignment="Top" Width="150" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="black" Content="BLACK" HorizontalAlignment="Left" Height="50" Margin="388,225,0,0" VerticalAlignment="Top" Width="150" Foreground="White" Background="Black" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="red" Content="RED" HorizontalAlignment="Left" Height="50" Margin="238,225,0,0" VerticalAlignment="Top" Width="150" Foreground="White" Background="Red" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="even" Content="EVEN" HorizontalAlignment="Left" Height="50" Margin="88,225,0,0" VerticalAlignment="Top" Width="150" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="22"/>
+        <Button x:Name="overlay" Content="Press To Play" Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" BorderBrush="White" FontSize="55" FontWeight="Bold" FontStyle="Italic" FontFamily="Stencil" Foreground="White" Click="overlay_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF73120F"/>
+                    <GradientStop Color="#FF1BD651" Offset="1"/>
+                    <GradientStop Color="#FF750E0E" Offset="0.323"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Window>

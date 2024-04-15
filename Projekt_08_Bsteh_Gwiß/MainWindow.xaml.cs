@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,6 +7,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -21,6 +23,19 @@ namespace Projekt_08_Bsteh_Gwiß
             InitializeComponent();
         }
 
-     
+        private void overlay_Click(object sender, RoutedEventArgs e)
+        {
+            overlay.IsEnabled = false;
+            overlay.Visibility = Visibility.Hidden;
+            foreach (var element in grid1.Children)
+            {
+                if (element is FrameworkElement frameworkElement)
+                {
+                    frameworkElement.Width += 150;
+                    frameworkElement.Height += 150;
+                }
+            }
+
+        }
     }
 }

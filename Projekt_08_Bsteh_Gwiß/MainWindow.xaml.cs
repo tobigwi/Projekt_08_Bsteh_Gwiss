@@ -243,6 +243,14 @@ namespace Projekt_08_Bsteh_Gwiß
 
         }
 
-        
+        private void overlay_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Rot34_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

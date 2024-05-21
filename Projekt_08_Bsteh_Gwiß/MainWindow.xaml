@@ -5,56 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt_08_Bsteh_Gwiß"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1500" Width="2000">
-    <Grid Background="#FF065215">
-        <Button x:Name="Rot3" Content="3" HorizontalAlignment="Left" Height="100" Margin="138,25,0,0" VerticalAlignment="Top" Width="100" Background="#FFFF0303" FontSize="40" Foreground="White" Click="Rot3_Click"/>
-        <Button x:Name="Schwarz6" Content="6" HorizontalAlignment="Left" Height="100" Margin="238,25,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz6_Click"/>
-        <Button x:Name="Rot9" Content="9" HorizontalAlignment="Left" Height="100" Margin="338,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" FontSize="40" Foreground="White"/>
-        <Button x:Name="Rot12" Content="12" HorizontalAlignment="Left" Height="100" Margin="438,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" FontSize="40" Foreground="White" Click="Rot12_Click"/>
-        <Button x:Name="Schwarz15" Content="15" HorizontalAlignment="Left" Height="100" Margin="538,25,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" RenderTransformOrigin="-2.32,0.59" Click="Schwarz15_Click"/>
-        <Button x:Name="Rot18" Content="18" HorizontalAlignment="Left" Height="100" Margin="638,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot18_Click"/>
-        <Button x:Name="Rot21" Content="21" HorizontalAlignment="Left" Height="100" Margin="738,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot21_Click"/>
-        <Button x:Name="Schwarz24" Content="24" HorizontalAlignment="Left" Height="100" Margin="838,25,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz24_Click"/>
-        <Button x:Name="Rot27" Content="27" HorizontalAlignment="Left" Height="100" Margin="938,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" RenderTransformOrigin="-0.4,0.55" Click="Rot27_Click"/>
-        <Button x:Name="Rot30" Content="30" HorizontalAlignment="Left" Height="100" Margin="1038,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot30_Click"/>
-        <Button x:Name="Schwarz33" Content="33" HorizontalAlignment="Left" Height="100" Margin="1138,25,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz33_Click"/>
-        <Button x:Name="Rot36" Content="36" HorizontalAlignment="Left" Height="100" Margin="1238,25,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot36_Click"/>
-        <Button x:Name="Linie1" Content="2 to 1" HorizontalAlignment="Left" Height="100" Margin="1338,25,0,0" VerticalAlignment="Top" Width="100" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="36" Click="Linie1_Click"/>
-        <Button x:Name="Schwarz2" Content="2" HorizontalAlignment="Left" Height="100" Margin="138,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz2_Click"/>
-        <Button x:Name="Rot5" Content="5" HorizontalAlignment="Left" Height="100" Margin="238,125,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot5_Click"/>
-        <Button x:Name="Schwarz8" Content="8" HorizontalAlignment="Left" Height="100" Margin="338,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz8_Click"/>
-        <Button x:Name="Schwarz11" Content="11" HorizontalAlignment="Left" Height="100" Margin="438,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40"/>
-        <Button x:Name="Rot14" Content="14" HorizontalAlignment="Left" Height="100" Margin="538,125,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot14_Click"/>
-        <Button x:Name="Schwarz17" Content="17" HorizontalAlignment="Left" Height="100" Margin="638,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz17_Click"/>
-        <Button x:Name="Schwarz20" Content="20" HorizontalAlignment="Left" Height="100" Margin="738,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz20_Click"/>
-        <Button x:Name="Rot23" Content="23" HorizontalAlignment="Left" Height="100" Margin="838,125,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot23_Click"/>
-        <Button x:Name="Schwarz26" Content="26" HorizontalAlignment="Left" Height="100" Margin="938,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz26_Click"/>
-        <Button x:Name="Schwarz29" Content="29" HorizontalAlignment="Left" Height="100" Margin="1038,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz29_Click"/>
-        <Button x:Name="Rot32" Content="32" HorizontalAlignment="Left" Height="100" Margin="1138,125,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot32_Click"/>
-        <Button x:Name="Schwarz35" Content="35" HorizontalAlignment="Left" Height="100" Margin="1238,125,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz35_Click"/>
-        <Button x:Name="Linie2" Content="2 to 1" HorizontalAlignment="Left" Height="100" Margin="1338,125,0,0" VerticalAlignment="Top" Width="100" Foreground="White" FontSize="36" Background="#FF065215" BorderBrush="White" Click="Linie2_Click"/>
-        <Button x:Name="Rot1" Content="1" HorizontalAlignment="Left" Height="100" Margin="138,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot1_Click"/>
-        <Button x:Name="Schwarz4" Content="4" HorizontalAlignment="Left" Height="100" Margin="238,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz4_Click"/>
-        <Button x:Name="Rot7" Content="7" HorizontalAlignment="Left" Height="100" Margin="338,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot7_Click"/>
-        <Button x:Name="Schwarz10" Content="10" HorizontalAlignment="Left" Height="100" Margin="438,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz10_Click"/>
-        <Button x:Name="Schwarz13" Content="13" HorizontalAlignment="Left" Height="100" Margin="538,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz13_Click"/>
-        <Button x:Name="Rot16" Content="16" HorizontalAlignment="Left" Height="100" Margin="638,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot16_Click"/>
-        <Button x:Name="Rot19" Content="19" HorizontalAlignment="Left" Height="100" Margin="738,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot19_Click"/>
-        <Button x:Name="Schwarz22" Content="22" HorizontalAlignment="Left" Height="100" Margin="838,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz22_Click"/>
-        <Button x:Name="Rot25" Content="25" HorizontalAlignment="Left" Height="100" Margin="938,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot25_Click"/>
-        <Button x:Name="Schwarz28" Content="28" HorizontalAlignment="Left" Height="100" Margin="1038,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz28_Click"/>
-        <Button x:Name="Schwarz31" Content="31" HorizontalAlignment="Left" Height="100" Margin="1138,225,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" FontSize="40" Click="Schwarz31_Click"/>
-        <Button x:Name="Rot34" Content="34" HorizontalAlignment="Left" Height="100" Margin="1238,225,0,0" VerticalAlignment="Top" Width="100" Background="Red" Foreground="White" FontSize="40" Click="Rot34_Click"/>
-        <Button x:Name="Linie3" Content="2 to 1" HorizontalAlignment="Left" Height="100" Margin="1338,225,0,0" VerticalAlignment="Top" Width="100" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="36" RenderTransformOrigin="-0.06,-0.1" Click="Linie3_Click"/>
-        <Button x:Name="Weiss0" Content="0" HorizontalAlignment="Left" Height="300" Margin="38,25,0,0" VerticalAlignment="Top" Width="100" Background="#FF065215" Foreground="White" BorderBrush="White" FontSize="44" Click="Weiss0_Click"/>
-        <Button x:Name="Weiss1" Content="1 - 12" HorizontalAlignment="Left" Height="100" Margin="138,325,0,0" VerticalAlignment="Top" Width="400" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="Weiss1_Click"/>
-        <Button x:Name="Weiss13" Content="13 - 24" HorizontalAlignment="Left" Height="100" Margin="538,325,0,0" VerticalAlignment="Top" Width="400" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="Weiss13_Click"/>
-        <Button x:Name="Weiss25" Content="25 - 36" HorizontalAlignment="Left" Height="100" Margin="938,325,0,0" VerticalAlignment="Top" Width="400" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="Weiss25_Click"/>
-        <Button x:Name="even" Content="EVEN" HorizontalAlignment="Left" Height="100" Margin="138,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="even_Click"/>
-        <Button x:Name="odd" Content="ODD" HorizontalAlignment="Left" Height="100" Margin="1138,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="odd_Click"/>
-        <Button x:Name="half2" Content="19 - 36" HorizontalAlignment="Left" Height="100" Margin="938,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="half2_Click"/>
-        <Button x:Name="half1" Content="1 - 18" HorizontalAlignment="Left" Height="100" Margin="338,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF065215" BorderBrush="White" FontSize="44" Click="half1_Click"/>
-        <Button x:Name="black" Content="" HorizontalAlignment="Left" Height="100" Margin="738,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="Black" BorderBrush="White" FontSize="44" Click="black_Click"/>
-        <Button x:Name="red" Content="" HorizontalAlignment="Left" Height="100" Margin="538,425,0,0" VerticalAlignment="Top" Width="200" Foreground="White" Background="Red" BorderBrush="White" FontSize="44" Click="red_Click"/>
+         Title="MainWindow" Height="750" Width="1470">
+    <Grid Background="#FF2F6B15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="g0" Content="0" Grid.Row="1" Grid.RowSpan="3" Grid.Column="3" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20" Click="btn37_Click"/>
+        <Button x:Name="r3" Content="3" Grid.Row="1" Grid.Column="4" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b6" Content="6" Grid.Row="1" Grid.Column="5" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r9" Content="9" Grid.Row="1" Grid.Column="6" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r12" Content="12" Grid.Row="1" Grid.Column="7" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b15" Content="15" Grid.Row="1" Grid.Column="8" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r18" Content="18" Grid.Row="1" Grid.Column="9" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r21" Content="21" Grid.Row="1" Grid.Column="10" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r24" Content="24" Grid.Row="1" Grid.Column="11" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r27" Content="27" Grid.Row="1" Grid.Column="12" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r30" Content="30" Grid.Row="1" Grid.Column="13" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b33" Content="33" Grid.Row="1" Grid.Column="14" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r36" Content="36" Grid.Row="1" Grid.Column="15" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="g1b2v1" Content="1 to 2" Grid.Row="1" Grid.Column="16" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="r2" Content="2" Grid.Row="2" Grid.Column="4" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r5" Content="5" Grid.Row="2" Grid.Column="5" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b8" Content="8" Grid.Row="2" Grid.Column="6" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r11" Content="11" Grid.Row="2" Grid.Column="7" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r14" Content="14" Grid.Row="2" Grid.Column="8" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b17" Content="17" Grid.Row="2" Grid.Column="9" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="b20" Content="20" Grid.Row="2" Grid.Column="10" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r23" Content="23" Grid.Row="2" Grid.Column="11" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b26" Content="26" Grid.Row="2" Grid.Column="12" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="b29" Content="29" Grid.Row="2" Grid.Column="13" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r32" Content="32" Grid.Row="2" Grid.Column="14" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b35" Content="35" Grid.Row="2" Grid.Column="15" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="g1b2v2" Content="1 to 2" Grid.Row="2" Grid.Column="16" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="r1" Content="1" Grid.Row="3" Grid.Column="4" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b4" Content="4" Grid.Row="3" Grid.Column="5" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r7" Content="7" Grid.Row="3" Grid.Column="6" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b10" Content="10" Grid.Row="3" Grid.Column="7" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="b13" Content="13" Grid.Row="3" Grid.Column="8" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r16" Content="16" Grid.Row="3" Grid.Column="9" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="r19" Content="19" Grid.Row="3" Grid.Column="10" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b22" Content="22" Grid.Row="3" Grid.Column="11" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r25" Content="25" Grid.Row="3" Grid.Column="12" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="b28" Content="28" Grid.Row="3" Grid.Column="13" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="b31" Content="31" Grid.Row="3" Grid.Column="14" BorderBrush="White" Foreground="White" FontSize="20" Background="Black" Click="btn37_Click"/>
+        <Button x:Name="r34" Content="34" Grid.Row="3" Grid.Column="15" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
+        <Button x:Name="g1b2v3" Content="1 to 2" Grid.Row="3" Grid.Column="16" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="g1b12" Content="1 - 12" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="g13b24" Content="13 - 24" Grid.Row="4" Grid.Column="8" Grid.ColumnSpan="4" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="g25b36" Content="25 - 36" Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="4" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="g1b18" Content="1 - 18" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="even" Content="EVEN" Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="r" Content="RED" Grid.Row="5" Grid.Column="8" Grid.ColumnSpan="2" Background="#FFF70505" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="b" Content="BLACK" Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="2" Background="Black" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="odd" Content="ODD" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button x:Name="g19b36" Content="19 - 36" Grid.Row="5" Grid.Column="14" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <ListBox x:Name="lbBet" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="14" BorderThickness="0" Background="#FF2F6B15" IsEnabled="False" Visibility="Hidden">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <Button x:Name="bet10" Content="10" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
+            <Button x:Name="bet50" Content="50" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
+            <Button x:Name="bet100" Content="100" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
+            <Button x:Name="bet200" Content="200" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
+            <Button x:Name="bet500" Content="500" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
+        </ListBox>
+        <Image x:Name="image" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" Source="https://www.toptacular.co.uk/wp-content/uploads/2020/07/roulette-1-1024x1024.jpg" Stretch="Fill"/>
+        <Button x:Name="start" Content="Gamble" Grid.Column="1" Grid.Row="7" Click="StartRotation_Click" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93"/>
     </Grid>
 </Window>

@@ -8,35 +8,36 @@
          Title="MainWindow" Height="750" Width="1470">
     <Grid Background="#FF2F6B15">
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="*" MinHeight="70"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*" MinHeight="70"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="280"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="280"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
+            <ColumnDefinition Width="*" MinWidth="70"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="g0" Content="0" Grid.Row="1" Grid.RowSpan="3" Grid.Column="3" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20" Click="btn37_Click"/>
         <Button x:Name="r3" Content="3" Grid.Row="1" Grid.Column="4" BorderBrush="White" Foreground="White" FontSize="20" Background="Red" Click="btn37_Click"/>
@@ -87,19 +88,14 @@
         <Button x:Name="b" Content="BLACK" Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="2" Background="Black" BorderBrush="White" Foreground="White" FontSize="20"/>
         <Button x:Name="odd" Content="ODD" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
         <Button x:Name="g19b36" Content="19 - 36" Grid.Row="5" Grid.Column="14" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
-        <ListBox x:Name="lbBet" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="14" BorderThickness="0" Background="#FF2F6B15" IsEnabled="False" Visibility="Hidden">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <Button x:Name="bet10" Content="10" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
-            <Button x:Name="bet50" Content="50" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
-            <Button x:Name="bet100" Content="100" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
-            <Button x:Name="bet200" Content="200" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
-            <Button x:Name="bet500" Content="500" Margin="20" Height="70" Width="140" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick"/>
-        </ListBox>
+        <Button x:Name="bet10" Content="10" Grid.Column="15" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet50" Content="50" Grid.Column="12" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet100" Content="100" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet200" Content="200" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet500" Content="500" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
         <Image x:Name="image" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" Source="https://www.toptacular.co.uk/wp-content/uploads/2020/07/roulette-1-1024x1024.jpg" Stretch="Fill"/>
-        <Button x:Name="start" Content="Gamble" Grid.Column="1" Grid.Row="7" Click="StartRotation_Click" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+        <Button x:Name="start" Content="Gamble" Grid.Column="1" Grid.RowSpan="2" Grid.Row="7" Click="StartRotation_Click" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="P1:" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="P2:" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Grid>
 </Window>

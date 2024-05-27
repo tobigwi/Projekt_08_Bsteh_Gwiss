@@ -26,13 +26,30 @@ namespace Projekt_08_Bsteh_Gwiß
         }
         private void btn37_Click(object sender, RoutedEventArgs e)
         {
-            lbBet.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
-            lbBet.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
+            bet10.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
+            bet10.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
+            bet50.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
+            bet50.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
+            bet100.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
+            bet100.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
+            bet200.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
+            bet200.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
+            bet500.Visibility = Visibility.Visible; //Der Button wird sichtbar gemacht
+            bet500.IsEnabled = true; //Der Button wird enabled (verwendbar gemacht)
         }
         private void btn_betClick(object sender, RoutedEventArgs e)
         {
-            lbBet.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
-            lbBet.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+            bet10.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
+            bet10.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+            bet50.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
+            bet50.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+            bet100.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
+            bet100.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+            bet200.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
+            bet200.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+            bet500.Visibility = Visibility.Hidden; //Der Button wird unsichtbar gemacht
+            bet500.IsEnabled = false; //Der Button wird disabled (nicht mehr verwendbar gemacht)
+
         }
         private void StartRotation_Click(object sender, RoutedEventArgs e)
         {

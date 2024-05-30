@@ -88,14 +88,28 @@
         <Button x:Name="b" Content="BLACK" Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="2" Background="Black" BorderBrush="White" Foreground="White" FontSize="20"/>
         <Button x:Name="odd" Content="ODD" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
         <Button x:Name="g19b36" Content="19 - 36" Grid.Row="5" Grid.Column="14" Grid.ColumnSpan="2" Background="#FF2F6B15" BorderBrush="White" Foreground="White" FontSize="20"/>
-        <Button x:Name="bet10" Content="10" Grid.Column="15" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
-        <Button x:Name="bet50" Content="50" Grid.Column="12" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
-        <Button x:Name="bet100" Content="100" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
-        <Button x:Name="bet200" Content="200" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
-        <Button x:Name="bet500" Content="500" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_betClick" Visibility="Hidden" IsEnabled="False"/>
-        <Image x:Name="image" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" Source="https://www.toptacular.co.uk/wp-content/uploads/2020/07/roulette-1-1024x1024.jpg" Stretch="Fill"/>
+        <Button x:Name="bet10" Content="10" Grid.Column="15" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_bet10Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet50" Content="50" Grid.Column="12" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_bet50Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet100" Content="100" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_bet100Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet200" Content="200" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_bet200Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="bet500" Content="500" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="7" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" Click="btn_bet500Click" Visibility="Hidden" IsEnabled="False"/>
+        <Image x:Name="image" VerticalAlignment="Top" MaxHeight="280" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" Source="https://www.toptacular.co.uk/wp-content/uploads/2020/07/roulette-1-1024x1024.jpg" Stretch="Fill"/>
         <Button x:Name="start" Content="Gamble" Grid.Column="1" Grid.RowSpan="2" Grid.Row="7" Click="StartRotation_Click" Background="#FFFFF400" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="P1:" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="P2:" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="p1" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center" Text="P1: 1000€"/>
+        <TextBlock x:Name="p2" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="P2:" FontSize="36" FontWeight="Bold" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ListBox x:Name="last_rolls" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="14" IsEnabled="False" BorderBrush="Black">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" FlowDirection="LeftToRight"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <ListBox x:Name="last_bets" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="14" IsEnabled="False" Foreground="Black" BorderBrush="Black">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" FlowDirection="LeftToRight"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Window>

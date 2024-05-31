@@ -12,33 +12,51 @@ namespace Projekt_08_Bsteh_Gwiß
     {
         private int currentBet;
         private int budgetp1 = 1000;
+        private int budgetp2 = 1000;
         private List<int> Rolls = new List<int>();
-        private List<Bet> Bets = new List<Bet>();
+        private List<Bet> BetsP1 = new List<Bet>();
+        private List<Bet> BetsP2 = new List<Bet>();
+        private List<string> UsedButtonsP1 = new List<string>();
+        private List<string> UsedButtonsP2 = new List<string>();
+        private Button lastClickedButton;
+        private int lastBetAmount;
+        private string lastbuttontype;
+        private bool isPlayer1 = true; // Flag to track current player
 
         public MainWindow()
         {
             InitializeComponent();
             InitializeBets();
             DataContext = this;
-        }
-
-        // Klasse zur Repräsentation einer Wette
-        public class Bet
-        {
-            public int Amount { get; set; }
-            public string ButtonName { get; set; }
-
-            public Bet(int amount, string buttonName)
-            {
-                Amount = amount;
-                ButtonName = buttonName;
-            }
+            UpdateBudgetDisplay();
         }
 
         private void InitializeBets()
         {
             currentBet = 0;
         }
+
+        private void UpdateBudgetDisplay()
+        {
+            p1.Text = $"P1: {budgetp1}€";
+            p2.Text = $"P2: {budgetp2}€";
+        }
+
+        // Klasse zur Repräsentation einer Wette
+        public class Bet
+        {
+            public int Amount { get; set; }
+            public string BetType { get; set; }
+            public string BetValue { get; set; }
+
+            public Bet(int amount, string betType, string betValue)
+            {
+                Amount = amount;
+                BetType = betType;
+                BetValue = betValue;
+            }
+        }
+
 
         // Alle Wetten verstecken, letzte Rollen und Wetten anzeigen
         private void HideBets()
@@ -55,6 +73,10 @@ namespace Projekt_08_Bsteh_Gwiß
             bet500.IsEnabled = false;
             last_rolls.Visibility = Visibility.Visible;
             last_bets.Visibility = Visibility.Visible;
+            switchToP1.Visibility = Visibility.Visible;
+            switchToP2.Visibility = Visibility.Visible;
+            switchToP1.IsEnabled = true;
+            switchToP2.IsEnabled = true;
         }
 
         // Alle Wetten anzeigen, letzte Rollen und Wetten verstecken
@@ -72,59 +94,91 @@ namespace Projekt_08_Bsteh_Gwiß
             bet500.IsEnabled = true;
             last_rolls.Visibility = Visibility.Hidden;
             last_bets.Visibility = Visibility.Hidden;
+            switchToP1.Visibility = Visibility.Hidden;
+            switchToP2.Visibility = Visibility.Hidden;
+            switchToP1.IsEnabled = false;
+            switchToP2.IsEnabled = false;
         }
 
         // ListBoxen aktualisieren
         private void UpdateListBoxes()
         {
-            
-            foreach (Bet bet in Bets)
-            {
-                last_bets.Items.Add($"{bet.Amount} ({bet.ButtonName})");
-            }
+            last_bets.Items.Clear();
         }
 
         // Wette platzieren und Budget aktualisieren
-        private void PlaceBet(int amount, string buttonName)
+        private void PlaceBet(int amount, string betType, string betValue)
         {
-            currentBet = amount;
-            budgetp1 -= amount;
-            p1.Text = $"P1: {budgetp1}€";
-            Bets.Add(new Bet(amount, buttonName));
+            if (isPlayer1)
+            {
+                if (budgetp1 < amount)
+                {
+                    MessageBox.Show("P1: Not enough budget to place this bet.");
+                    return;
+                }
+
+                currentBet = amount;
+                budgetp1 -= amount;
+                p1.Text = $"P1: {budgetp1}€";
+                BetsP1.Add(new Bet(amount, betType, betValue));
+                UsedButtonsP1.Add(lastClickedButton.Name);
+            }
+            else
+            {
+                if (budgetp2 < amount)
+                {
+                    MessageBox.Show("P2: Not enough budget to place this bet.");
+                    return;
+                }
+
+                currentBet = amount;
+                budgetp2 -= amount;
+                p2.Text = $"P2: {budgetp2}€";
+                BetsP2.Add(new Bet(amount, betType, betValue));
+                UsedButtonsP2.Add(lastClickedButton.Name);
+            }
+
+            lastBetAmount = amount;
+            last_bets.Items.Add($"{betType} ({betValue}) ({lastBetAmount}€)");
             HideBets();
-            UpdateListBoxes();
         }
 
-        private void btn37_Click(object sender, RoutedEventArgs e)
-        {
-            ShowBets();
-        }
 
         private void btn_bet10Click(object sender, RoutedEventArgs e)
         {
-            PlaceBet(10, "10");
+            PlaceBet(10, lastbuttontype, lastClickedButton.Content.ToString());
         }
 
         private void btn_bet50Click(object sender, RoutedEventArgs e)
         {
-            PlaceBet(50, "50");
+            PlaceBet(50, lastbuttontype, lastClickedButton.Content.ToString());
         }
 
         private void btn_bet100Click(object sender, RoutedEventArgs e)
         {
-            PlaceBet(100, "100");
+            PlaceBet(100, lastbuttontype, lastClickedButton.Content.ToString());
         }
 
         private void btn_bet200Click(object sender, RoutedEventArgs e)
         {
-            PlaceBet(200, "200");
+            PlaceBet(200, lastbuttontype, lastClickedButton.Content.ToString());
         }
 
         private void btn_bet500Click(object sender, RoutedEventArgs e)
         {
-            PlaceBet(500, "500");
+            PlaceBet(500, lastbuttontype, lastClickedButton.Content.ToString());
+        }
+        private void SwitchToP1_Click(object sender, RoutedEventArgs e)
+        {
+            isPlayer1 = true;
+            MessageBox.Show("Switched to Player 1");
         }
 
+        private void SwitchToP2_Click(object sender, RoutedEventArgs e)
+        {
+            isPlayer1 = false;
+            MessageBox.Show("Switched to Player 2");
+        }
         // Rotation des Roulette-Rads starten
         private void StartRotation_Click(object sender, RoutedEventArgs e)
         {
@@ -133,6 +187,7 @@ namespace Projekt_08_Bsteh_Gwiß
                 MessageBox.Show("Please place a bet first.");
                 return;
             }
+
             DisableButtons();
 
             Random random = new Random();
@@ -140,18 +195,26 @@ namespace Projekt_08_Bsteh_Gwiß
 
             Rolls.Add(randomNumber);
             last_rolls.Items.Add(randomNumber);
-           
 
             double rotationAngle = CalculateRotationAngle(randomNumber);
             RotateImage(TimeSpan.FromSeconds(10), rotationAngle);
 
-            EnableButtons();
             string result = GetRouletteResult(randomNumber);
             MessageBox.Show($"The ball landed on {result}.");
+
+            CheckAndCalculateWinnings(randomNumber);
+
             currentBet = 0;
             last_bets.Items.Clear();
-            Bets.Clear();
+            BetsP1.Clear();
+            BetsP2.Clear();
+            UsedButtonsP1.Clear();
+            UsedButtonsP2.Clear();
+            UpdateListBoxes();
+
+            EnableButtons();
         }
+
 
         // Bild drehen
         private void RotateImage(TimeSpan duration, double angle)
@@ -170,6 +233,8 @@ namespace Projekt_08_Bsteh_Gwiß
 
             rotateTransform.BeginAnimation(RotateTransform.AngleProperty, animation);
         }
+
+
         private void DisableButtons()
         {
             // Deaktiviere jeden Button einzeln
@@ -293,8 +358,6 @@ namespace Projekt_08_Bsteh_Gwiß
         // Berechnung des Rotationswinkels basierend auf der Zufallszahl
         private double CalculateRotationAngle(int randomNumber)
         {
-            // die cases sagen um wie viel grad sich das Rad drehen soll
-            // der Rotationswinkel ist abhängig von der random number
             double rotationAngle = 0;
 
             switch (randomNumber)
@@ -416,24 +479,250 @@ namespace Projekt_08_Bsteh_Gwiß
         }
 
         // Ermittlung des Ergebnisses basierend auf der Zufallszahl
+
+
+        // Überprüfung der Gewinne und Berechnung des Gewinns
+        private void CheckAndCalculateWinnings(int rolledNumber)
+        {
+            string rolledColor = GetColor(rolledNumber);
+            int winningsP1 = CalculateWinnings(BetsP1, rolledNumber, rolledColor);
+            int winningsP2 = CalculateWinnings(BetsP2, rolledNumber, rolledColor);
+
+            if (winningsP1 > 0)
+            {
+                MessageBox.Show($"P1 wins {winningsP1}€!");
+            }
+
+            if (winningsP2 > 0)
+            {
+                MessageBox.Show($"P2 wins {winningsP2}€!");
+            }
+
+            budgetp1 += winningsP1;
+            budgetp2 += winningsP2;
+            UpdateBudgetDisplay();
+        }
+
         private string GetRouletteResult(int number)
         {
-            string color = "";
-
-            if (number == 0)
-            {
-                color = "Green";
-            }
-            else if (new[] { 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 }.Contains(number))
-            {
-                color = "Red";
-            }
-            else
-            {
-                color = "Black";
-            }
-
+            string color = GetColor(number);
             return $"{number} ({color})";
         }
+
+        private string GetColor(int number)
+        {
+            if (number == 0)
+                return "Green";
+            if (new[] { 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 }.Contains(number))
+                return "Red";
+            else
+                return "Black";
+        }
+
+        private int CalculateWinnings(List<Bet> bets, int rolledNumber, string rolledColor)
+        {
+            int winnings = 0;
+
+            foreach (var bet in bets)
+            {
+                bool win = false;
+
+                switch (bet.BetType)
+                {
+                    case "Number":
+                        if (Convert.ToInt32(bet.BetValue) == rolledNumber)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 35; // Payout for a single number bet is 35:1
+                        }
+                        break;
+                    case "Red":
+                        if (GetColor(rolledNumber)== "Red") {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for a color bet is 2:1
+                        }
+                        break;
+                    case "Black":
+                        if (GetColor(rolledNumber) == "Black")
+                        {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for a color bet is 2:1
+                        }
+                        break;
+                    case "Even":
+                        if (rolledNumber % 2 == 0)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for an even bet is 2:1
+                        }
+                        break;
+                    case "Odd":
+                        if (rolledNumber % 2 != 0)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for an odd bet is 2:1
+                        }
+                        break;
+                    case "1to18":
+                        if (rolledNumber >= 1 && rolledNumber <= 18)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for 1-18 bet is 2:1
+                        }
+                        break;
+                    case "19to36":
+                        if (rolledNumber >= 19 && rolledNumber <= 36)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 2; // Payout for 19-36 bet is 2:1
+                        }
+                        break;
+                    case "EveryThird1to36":
+                        if (rolledNumber % 3 == 0)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for every third number from 1 to 36 bet is 3:1
+                        }
+                        break;
+                    case "EveryThird2to36":
+                        if ((rolledNumber + 1) % 3 == 0)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for every third number from 2 to 36 bet is 3:1
+                        }
+                        break;
+                    case "EveryThird3to36":
+                        if ((rolledNumber + 2) % 3 == 0)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for every third number from 3 to 36 bet is 3:1
+                        }
+                        break;
+                    case "First3rd":
+                        if (rolledNumber > 0 && rolledNumber < 13)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for first third is 3:1
+                        }
+                        break;
+                    case "Second3rd":
+                        if (rolledNumber > 12 && rolledNumber < 25)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for second third is 3:1
+                        }
+                        break;
+                    case "Third3rd":
+                        if (rolledNumber > 24 && rolledNumber < 37)
+                        {
+                            win = true;
+                            winnings += bet.Amount * 3; // Payout for third third is 3:1
+                        }
+                        break;
+                }
+
+                if (win)
+                {
+                    MessageBox.Show($"Congratulations! You won {winnings}€ on your {bet.BetType} bet ({bet.BetValue}).");
+                }
+            }
+
+            return winnings;
+        }
+
+
+
+        private void g1b12_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "First3rd";
+            ShowBets();
+        }
+
+        private void g13b24_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Second3rd";
+            ShowBets();
+        }
+
+        private void g25b36_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Third3rd";
+            ShowBets();
+
+        }
+
+        private void g1b2v1_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "EveryThird1to36";
+            ShowBets();
+        }
+
+        private void g1b2v2_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "EveryThird2to36";
+            ShowBets();
+        }
+
+        private void g1b2v3_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "EveryThird3to36";
+            ShowBets();
+        }
+
+        private void g1b18_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "1to18";
+            ShowBets();
+        }
+
+        private void even_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Even";
+            ShowBets();
+        }
+
+        private void odd_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Odd";
+            ShowBets();
+        }
+
+        private void g19b36_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "19to36";
+            ShowBets();
+        }
+        private void btn37_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Number";
+            ShowBets();
+
+        }
+        private void r_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Red";
+            ShowBets();
+        }
+
+        private void b_Click(object sender, RoutedEventArgs e)
+        {
+            lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
+            lastbuttontype = "Black";
+            ShowBets();
+        }
+
     }
 }
+

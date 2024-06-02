@@ -14,7 +14,9 @@ namespace Projekt_08_Bsteh_Gwiß
 {
     public partial class MainWindow : Window
     {
+        //erstellen der CSV Datei
         private string werte = "werte.csv";
+        //Funktion zum Laden der Daten aus der CSV Datei
         private void LoadFromCsv()
         {
             if (!File.Exists(werte))
@@ -51,7 +53,7 @@ namespace Projekt_08_Bsteh_Gwiß
 
             UpdateBudgetDisplay();
         }
-
+        //Daten in CSV Datei Speichern
         private void SaveToCsv()
         {
             using (var writer = new StreamWriter(werte))
@@ -65,18 +67,18 @@ namespace Projekt_08_Bsteh_Gwiß
             }
         }
 
-        private int currentBet;
-        private int budgetp1 = 1000;
-        private int budgetp2 = 1000;
-        private List<int> Rolls = new List<int>();
-        private List<Bet> BetsP1 = new List<Bet>();
-        private List<Bet> BetsP2 = new List<Bet>();
-        private List<string> UsedButtonsP1 = new List<string>();
-        private List<string> UsedButtonsP2 = new List<string>();
-        private Button lastClickedButton;
-        private int lastBetAmount;
-        private string lastbuttontype;
-        private bool isPlayer1 = true; // Flag to track current player
+        private int currentBet; //letzte abgeschlossene Wette
+        private int budgetp1 = 1000; //Budget von Player 1
+        private int budgetp2 = 1000; //Budget von Player 2
+        private List<int> Rolls = new List<int>(); //Liste mit Randomnumbers
+        private List<Bet> BetsP1 = new List<Bet>(); //Wetten von Player 1
+        private List<Bet> BetsP2 = new List<Bet>(); //Wetten von Player 2
+        private List<string> UsedButtonsP1 = new List<string>(); //Benutzte Wetteknöpfe Player 1
+        private List<string> UsedButtonsP2 = new List<string>(); //Benutzte Wetteknöpfe Player 2
+        private Button lastClickedButton; 
+        private int lastBetAmount; //höhe der letzten Wette
+        private string lastbuttontype; //Art des letzten Buttons
+        private bool isPlayer1 = true; // Überprüfen welcher Spieler wettet
 
         public MainWindow()
         {
@@ -87,6 +89,7 @@ namespace Projekt_08_Bsteh_Gwiß
             LoadFromCsv();
             LoadImageFromGitHub();
         }
+        //Bild kompliziert über Github einfügen da über XAML nicht funktioniert
         private async void LoadImageFromGitHub()
         {
             string imageUrl = "https://raw.githubusercontent.com/tobigwi/Projekt_08_Bsteh_Gwiss/master/RouletteRad1.png";
@@ -114,16 +117,17 @@ namespace Projekt_08_Bsteh_Gwiß
             }
 
         }
+        // Button zum speichern in CSV
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             SaveToCsv();
         }
-
+        // Mometane Wette auf 0 setzen
         private void InitializeBets()
         {
             currentBet = 0;
         }
-
+        //Budget in Textblock ändern
         private void UpdateBudgetDisplay()
         {
             p1.Text = $"P1: {budgetp1}€";
@@ -240,7 +244,7 @@ namespace Projekt_08_Bsteh_Gwiß
             HideBets();
         }
 
-
+        // Funktionen zum Wetten mit bestimmten Budget
         private void btn_bet10Click(object sender, RoutedEventArgs e)
         {
             PlaceBet(10, lastbuttontype, lastClickedButton.Content.ToString());
@@ -270,7 +274,7 @@ namespace Projekt_08_Bsteh_Gwiß
             isPlayer1 = true;
             MessageBox.Show("Switched to Player 1");
         }
-
+        //zu Spieler 2 wechseln
         private void SwitchToP2_Click(object sender, RoutedEventArgs e)
         {
             isPlayer1 = false;
@@ -583,9 +587,6 @@ namespace Projekt_08_Bsteh_Gwiß
             return rotationAngle;
         }
 
-        // Ermittlung des Ergebnisses basierend auf der Zufallszahl
-
-
         // Überprüfung der Gewinne und Berechnung des Gewinns
         private void CheckAndCalculateWinnings(int rolledNumber)
         {
@@ -607,13 +608,13 @@ namespace Projekt_08_Bsteh_Gwiß
             budgetp2 += winningsP2;
             UpdateBudgetDisplay();
         }
-
+        //Überprüfen welche Zahl und Farbe
         private string GetRouletteResult(int number)
         {
             string color = GetColor(number);
             return $"{number} ({color})";
         }
-
+        //Farbe herausfinden
         private string GetColor(int number)
         {
             if (number == 0)
@@ -623,7 +624,7 @@ namespace Projekt_08_Bsteh_Gwiß
             else
                 return "Black";
         }
-
+        //Gewinn ermitteln
         private int CalculateWinnings(List<Bet> bets, int rolledNumber, string rolledColor)
         {
             int winnings = 0;
@@ -736,7 +737,7 @@ namespace Projekt_08_Bsteh_Gwiß
         }
 
 
-
+        //Button Clicks für Sonderwetten (Spalten, Reihen, Farbe, erste Hälfte, zweite Hälfte, Even und Odd)
         private void g1b12_Click(object sender, RoutedEventArgs e)
         {
             lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons

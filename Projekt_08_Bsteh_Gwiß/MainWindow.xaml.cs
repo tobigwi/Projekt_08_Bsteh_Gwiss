@@ -89,7 +89,7 @@ namespace Projekt_08_Bsteh_Gwiß
         }
         private async void LoadImageFromGitHub()
         {
-            string imageUrl = "https://raw.githubusercontent.com/tobigwi/Projekt_08_Bsteh_Gwiss/master/RouletteRad.jpg";
+            string imageUrl = "https://raw.githubusercontent.com/tobigwi/Projekt_08_Bsteh_Gwiss/master/RouletteRad1.png";
 
             using (HttpClient client = new HttpClient())
             {
@@ -683,21 +683,21 @@ namespace Projekt_08_Bsteh_Gwiß
                         }
                         break;
                     case "EveryThird1to36":
-                        if (rolledNumber % 3 == 0)
+                        if (rolledNumber % 3 == 0 && rolledNumber != 0)
                         {
                             win = true;
                             winnings += bet.Amount * 3; // Payout for every third number from 1 to 36 bet is 3:1
                         }
                         break;
                     case "EveryThird2to36":
-                        if ((rolledNumber + 1) % 3 == 0)
+                        if ((rolledNumber + 1) % 3 == 0 && rolledNumber != 0)
                         {
                             win = true;
                             winnings += bet.Amount * 3; // Payout for every third number from 2 to 36 bet is 3:1
                         }
                         break;
                     case "EveryThird3to36":
-                        if ((rolledNumber + 2) % 3 == 0)
+                        if ((rolledNumber + 2) % 3 == 0 && rolledNumber != 0)
                         {
                             win = true;
                             winnings += bet.Amount * 3; // Payout for every third number from 3 to 36 bet is 3:1

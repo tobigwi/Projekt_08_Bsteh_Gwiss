@@ -1,15 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
+using System.Net.Http;
 
 namespace Projekt_08_Bsteh_Gwiß
 {
     public partial class MainWindow : Window
     {
+        private string werte = "werte.csv";
+        private void LoadFromCsv()
+        {
+            if (!File.Exists(werte))
+                return;
+
+            using (var reader = new StreamReader(werte))
+            {
+                // Lese Budget-Daten
+                var budgetLine = reader.ReadLine();
+                var budgetParts = budgetLine.Split(',');
+
+                if (budgetParts.Length >= 2)
+                {
+                    budgetp1 = int.Parse(budgetParts[0]);
+                    budgetp2 = int.Parse(budgetParts[1]);
+                }
+
+                // Lese Rolls-Liste
+                var rollsLine = reader.ReadLine();
+                if (rollsLine != null)
+                {
+                    var rollsParts = rollsLine.Split(',');
+
+                    Rolls.Clear();
+                    foreach (var roll in rollsParts)
+                    {
+                        if (int.TryParse(roll, out int rollValue))
+                        {
+                            Rolls.Add(rollValue);
+                        }
+                    }
+                }
+            }
+
+            UpdateBudgetDisplay();
+        }
+
+        private void SaveToCsv()
+        {
+            using (var writer = new StreamWriter(werte))
+            {
+                // Schreibe Budget-Daten
+                writer.WriteLine($"{budgetp1},{budgetp2}");
+
+                // Schreibe Rolls-Liste
+                var rollsLine = string.Join(",", Rolls);
+                writer.WriteLine(rollsLine);
+            }
+        }
+
         private int currentBet;
         private int budgetp1 = 1000;
         private int budgetp2 = 1000;
@@ -29,6 +84,39 @@ namespace Projekt_08_Bsteh_Gwiß
             InitializeBets();
             DataContext = this;
             UpdateBudgetDisplay();
+            LoadFromCsv();
+            LoadImageFromGitHub();
+        }
+        private async void LoadImageFromGitHub()
+        {
+            string imageUrl = "https://raw.githubusercontent.com/tobigwi/Projekt_08_Bsteh_Gwiss/master/RouletteRad.jpg";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(imageUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    var imageStream = await response.Content.ReadAsStreamAsync();
+                    var bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.StreamSource = imageStream;
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+
+                    image.Source = bitmap;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim Laden des Bildes: " + ex.Message);
+                }
+            }
+
+        }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            SaveToCsv();
         }
 
         private void InitializeBets()
@@ -77,6 +165,10 @@ namespace Projekt_08_Bsteh_Gwiß
             switchToP2.Visibility = Visibility.Visible;
             switchToP1.IsEnabled = true;
             switchToP2.IsEnabled = true;
+            save.IsEnabled = true;
+            new_game.IsEnabled = true;
+            save.Visibility = Visibility.Visible;
+            new_game.Visibility = Visibility.Visible;
         }
 
         // Alle Wetten anzeigen, letzte Rollen und Wetten verstecken
@@ -98,6 +190,11 @@ namespace Projekt_08_Bsteh_Gwiß
             switchToP2.Visibility = Visibility.Hidden;
             switchToP1.IsEnabled = false;
             switchToP2.IsEnabled = false;
+            save.Visibility = Visibility.Hidden;
+            new_game.Visibility = Visibility.Hidden;
+            save.IsEnabled = false;
+            new_game.IsEnabled = false;
+
         }
 
         // ListBoxen aktualisieren
@@ -293,6 +390,10 @@ namespace Projekt_08_Bsteh_Gwiß
             bet200.IsEnabled = false;
             bet500.IsEnabled = false;
             start.IsEnabled = false;
+            switchToP1.IsEnabled = false;
+            switchToP2.IsEnabled = false;
+            new_game.IsEnabled = false;
+            save.IsEnabled = false;
         }
 
         private void EnableButtons()
@@ -353,6 +454,10 @@ namespace Projekt_08_Bsteh_Gwiß
             bet200.IsEnabled = true;
             bet500.IsEnabled = true;
             start.IsEnabled = true;
+            switchToP1.IsEnabled = true;
+            switchToP2.IsEnabled = true;
+            new_game.IsEnabled = true;
+            save.IsEnabled = true;
         }
 
         // Berechnung des Rotationswinkels basierend auf der Zufallszahl
@@ -721,6 +826,14 @@ namespace Projekt_08_Bsteh_Gwiß
             lastClickedButton = sender as Button; // Speichern des zuletzt geklickten Buttons
             lastbuttontype = "Black";
             ShowBets();
+        }
+        private void newGame_Click(object sender, RoutedEventArgs e)
+        {
+            budgetp1 = 1000;
+            budgetp2 = 1000;
+            Rolls.Clear();
+            last_rolls.Items.Clear();
+            UpdateBudgetDisplay();
         }
 
     }
